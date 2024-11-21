@@ -65,20 +65,8 @@ out/
 storybook-static/
 
 # WebStorm specific files
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionaries
-.idea/vcs.xml
-.idea/jsLibraryMappings.xml
-.idea/modules.xml
-.idea/.rdb
-.idea/misc.xml
+.idea/*
 
-# VSCode specific settings
-.vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/*.code-workspace
+.vscode/*
 
-# Local React development files
-.local/
+.local/*
