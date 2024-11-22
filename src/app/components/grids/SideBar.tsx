@@ -19,6 +19,7 @@ import {
   sideBarTheme,
   sideBarMenuSubItemListTheme,
 } from "../../styles/sidebar/SideBarMenuTheme";
+import { Link } from "react-router-dom";
 
 interface SubItem {
   label: string;
@@ -36,11 +37,14 @@ export const SubItemsList = (props: ListItemProps) => {
   ) : (
     <ThemeProvider theme={sideBarMenuSubItemListTheme}>
       <CssBaseline />
+
       <Collapse in={props.open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {props.subitems.map((subItem, index) => (
             <ListItemButton
               key={index}
+              component={Link}
+              to={subItem.location}
               className="MuiListItemButton-sideBarMenuSubItemList"
               sx={{
                 paddingLeft: "32px",
@@ -81,7 +85,7 @@ const MenuItem = ({
 
   return (
     <>
-      <ListItemButton onClick={handleClick}>
+      <ListItemButton component={Link} to="/products" onClick={handleClick}>
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={label} />
         {subItems ? open ? <ExpandLess /> : <ExpandMore /> : null}
@@ -100,15 +104,15 @@ export const MenuItems = () => {
           <MenuItem
             label="Produtos"
             icon={<InventoryIcon />}
-            subItems={[{ label: "Criar novo", location: "foo" }]}
+            subItems={[{ label: "Criar novo", location: "/foo" }]}
           />
           <Divider />
           <MenuItem
             label="Fluxo de Caixa"
             icon={<PointOfSaleIcon />}
             subItems={[
-              { label: "Detalhamento", location: "foo" },
-              { label: "Estoque", location: "foo" },
+              { label: "Detalhamento", location: "/foo" },
+              { label: "Estoque", location: "/stock" },
             ]}
           />
           <Divider />

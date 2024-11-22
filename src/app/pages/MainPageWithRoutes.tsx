@@ -16,7 +16,7 @@ export const MainPageWithRoutes: React.FC = () => {
       <Box className="MuiBox-mainPageWithRoutes">
         <MainTopBar />
         <Box className="MuiBox-contentMainPageWithRoutes">
-          {location.pathname === "/" && <StockListingSection />}
+          {location.pathname === "/" && <ProductListingSection />}
           {location.pathname === "/stock" && <StockListingSection />}
           {location.pathname === "/products" && <ProductListingSection />}
           {location.pathname === "/foo" && <Foo />}
