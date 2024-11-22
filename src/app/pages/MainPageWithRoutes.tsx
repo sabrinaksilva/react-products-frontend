@@ -1,38 +1,27 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { MainTopBar } from "../components/topBar/MainTopBar";
-import { StockSection } from "./StockSection";
-import { ProductSection } from "./ProductSection";
+import { StockListingSection } from "./StockListingSection";
+import { ProductListingSection } from "./ProductListingSection";
 import { Foo } from "../components/grids/foo";
+import { mainPageWithRoutesTheme } from "../styles/main/MainTheme";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
-      <MainTopBar />
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          padding: 2,
-        }}
-      >
-        {location.pathname === "/" && <StockSection />}
-        {location.pathname === "/stock" && <StockSection />}
-        {location.pathname === "/products" && <ProductSection />}
-        {location.pathname === "/foo" && <Foo />}
+    <ThemeProvider theme={mainPageWithRoutesTheme}>
+      <CssBaseline />
+      <Box className="MuiBox-mainPageWithRoutes">
+        <MainTopBar />
+        <Box className="MuiBox-contentMainPageWithRoutes">
+          {location.pathname === "/" && <StockListingSection />}
+          {location.pathname === "/stock" && <StockListingSection />}
+          {location.pathname === "/products" && <ProductListingSection />}
+          {location.pathname === "/foo" && <Foo />}
+        </Box>
       </Box>
-    </Box>
+    </ThemeProvider>
   );
 };

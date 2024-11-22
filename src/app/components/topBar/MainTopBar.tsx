@@ -1,45 +1,38 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { Box } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
-import { MainTheme } from "../../styles/MainTheme";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { TopBarButton } from "./TopBarButton";
 import { LogOutButton } from "./LogOutButton";
+import {
+  mainToolBarTheme,
+  mainTopBarToolBarTheme,
+} from "../../styles/main/topBar/MainTopBarThemes";
+import { mainTheme } from "../../styles/main/MainTheme";
 
 export const MainTopBar: React.FC = () => {
   return (
-    <ThemeProvider theme={MainTheme}>
+    <ThemeProvider theme={mainTheme}>
+      <CssBaseline />
       <AppBar
+        className="MuiAppBar-main"
         position="static"
         color="primary"
         elevation={0}
-        sx={{
-          width: "100%",
-          left: 0,
-        }}
       >
-        <Toolbar
-          disableGutters
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            px: 2,
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center", gap: 4 }}>
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-              }}
-            >
-              <TopBarButton label="PRODUTOS" route="/products" />
-              <TopBarButton label="ESTOQUE" route="/stock" />
-            </Box>
-          </Box>
-          <LogOutButton />
-        </Toolbar>
+        <ThemeProvider theme={mainToolBarTheme}>
+          <Toolbar className="MuiToolBar-main" disableGutters>
+            <ThemeProvider theme={mainTopBarToolBarTheme}>
+              <Box className="MuiBox-main">
+                <Box className="MuiBox-buttons">
+                  <TopBarButton label="PRODUTOS" route="/products" />
+                  <TopBarButton label="ESTOQUE" route="/stock" />
+                </Box>
+              </Box>
+            </ThemeProvider>
+            <LogOutButton />
+          </Toolbar>
+        </ThemeProvider>
       </AppBar>
     </ThemeProvider>
   );

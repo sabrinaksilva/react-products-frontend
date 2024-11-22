@@ -1,23 +1,28 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
+import React from "react";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { SideBar } from "./SideBar";
 import { MainPageWithRoutes } from "../../pages/MainPageWithRoutes";
+import { mainGridContainerTheme } from "../../styles/main/MainTheme";
 
 export const MainGridContainer = () => {
   return (
-    <Box sx={{ flexGrow: 1, height: "100vh" }}>
-      <Grid container spacing={0} sx={{ height: "100%" }}>
-        <Grid size={2} sx={{ height: "100%", backgroundColor: "blue" }}>
-          <SideBar />
-        </Grid>
+    <ThemeProvider theme={mainGridContainerTheme}>
+      <CssBaseline />
+      <Box className="MuiBox-mainGridContainer">
         <Grid
-          size={10}
-          sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+          container
+          spacing={0}
+          className="MuiGrid-container-mainGridContainer"
         >
-          <MainPageWithRoutes />
+          <Grid size={2} className="MuiGrid-sidebar-mainGridContainer">
+            <SideBar />
+          </Grid>
+          <Grid size={10} className="MuiGrid-mainContent-mainGridContainer">
+            <MainPageWithRoutes />
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </ThemeProvider>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button, CssBaseline, ThemeProvider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { mainTopBarButtonTheme } from "../../styles/main/topBar/MainTopBarThemes";
 
 export const TopBarButton = ({
   label,
@@ -13,16 +14,15 @@ export const TopBarButton = ({
   const handleClick = () => navigate(route);
 
   return (
-    <Button
-      color="inherit"
-      sx={{
-        fontSize: "14px",
-        fontWeight: "bold",
-        textTransform: "none",
-      }}
-      onClick={handleClick}
-    >
-      {label}
-    </Button>
+    <ThemeProvider theme={mainTopBarButtonTheme}>
+      <CssBaseline />
+      <Button
+        color="inherit"
+        className="MuiButton-mainTopBarButton"
+        onClick={handleClick}
+      >
+        {label}
+      </Button>
+    </ThemeProvider>
   );
 };

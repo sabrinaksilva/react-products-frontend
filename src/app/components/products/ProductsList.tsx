@@ -1,39 +1,38 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
+import { Product } from "../../domain/Product";
+import { ListProductsUseCase } from "../../usecases/list-products-use-case";
+import { productServiceSingleton } from "../../shared/singletons/ProductServiceSingleton";
 import { ProductAccordionLine } from "./ProductAccordionLine";
 
 export const ProductsList = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const listProductsUseCase = new ListProductsUseCase(productServiceSingleton);
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      try {
+        const fetchedProducts = await listProductsUseCase.getAll();
+        setProducts(fetchedProducts);
+      } catch (error) {
+        console.error("Erro ao buscar produtos:", error);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <div>
-      <ProductAccordionLine productName="Produto1" />
-      <ProductAccordionLine productName="Produto2" />
-      <ProductAccordionLine productName="Produto3" />
-      <ProductAccordionLine productName="Produto4" />
-      <ProductAccordionLine productName="Produto5" />
-      <ProductAccordionLine productName="Produto6" />
-      <ProductAccordionLine productName="Produto7" />
-      <ProductAccordionLine productName="Produto8" />
-      <ProductAccordionLine productName="Produto9" />
-      <ProductAccordionLine productName="Produto10" />
-      <ProductAccordionLine productName="Produto11" />
-      <ProductAccordionLine productName="Produto12" />
-      <ProductAccordionLine productName="Produto13" />
-      <ProductAccordionLine productName="Produto14" />
-      <ProductAccordionLine productName="Produto15" />
-      <ProductAccordionLine productName="Produto16" />
-      <ProductAccordionLine productName="Produto17" />
-      <ProductAccordionLine productName="Produto18" />
-      <ProductAccordionLine productName="Produto19" />
-      <ProductAccordionLine productName="Produto20" />
-      <ProductAccordionLine productName="Produto21" />
-      <ProductAccordionLine productName="Produto22" />
-      <ProductAccordionLine productName="Produto23" />
-      <ProductAccordionLine productName="Produto24" />
-      <ProductAccordionLine productName="Produto25" />
-      <ProductAccordionLine productName="Produto26" />
-      <ProductAccordionLine productName="Produto27" />
-      <ProductAccordionLine productName="Produto28" />
-      <ProductAccordionLine productName="Produto29" />
-      <ProductAccordionLine productName="Produto30" />
+      {products.map((product, index) => (
+        <ProductAccordionLine key={index} product={product} index={index} />
+      ))}
     </div>
   );
 };

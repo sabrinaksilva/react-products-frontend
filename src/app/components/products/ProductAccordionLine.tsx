@@ -3,22 +3,28 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import * as React from "react";
+import { ProductTable } from "./ProductsTable";
+import { Product } from "../../domain/Product";
 
 export const ProductAccordionLine = ({
-  productName,
+  product,
+  index,
 }: {
-  productName: string;
+  product: Product;
+  index: number;
 }) => {
   return (
     <Accordion>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1-content"
-        id="panel1-header"
+        aria-controls={`panel${index}-content`}
+        id={`panel${index}-header`}
       >
-        {productName}
+        {product.name}
       </AccordionSummary>
-      <AccordionDetails>Caracterísiticas do {productName}</AccordionDetails>
+      <AccordionDetails>
+        <ProductTable product={product} index={index} />
+      </AccordionDetails>
     </Accordion>
   );
 };

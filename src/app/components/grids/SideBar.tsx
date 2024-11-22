@@ -13,7 +13,12 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import { useLocation, useNavigate } from "react-router-dom";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import {
+  sideBarMenuItemsTheme,
+  sideBarTheme,
+  sideBarMenuSubItemListTheme,
+} from "../../styles/sidebar/SideBarMenuTheme";
 
 interface SubItem {
   label: string;
@@ -25,38 +30,32 @@ interface ListItemProps {
   open: boolean;
 }
 
-const SubItemsList = (props: ListItemProps) => {
-  const navigate = useNavigate();
-
-  // const handleSubItemClick = ({
-  //   subItemLabel,
-  //   subItemLocation,
-  // }: {
-  //   subItemLabel: string;
-  //   subItemLocation: string;
-  // }) => {
-  //   if (location.pathname === "/foo") {
-  //     navigate(subItemLocation, {
-  //       state: {
-  //         subItemLabel: subItemLabel,
-  //         subItemLocation: subItemLocation,
-  //       },
-  //     });
-  //   }
-  // };
-
+export const SubItemsList = (props: ListItemProps) => {
   return !props.open || props.subitems.length === 0 ? (
     <></>
   ) : (
-    <Collapse in={props.open} timeout="auto" unmountOnExit>
-      <List component="div" disablePadding>
-        {props.subitems.map((subItem, index) => (
-          <ListItemButton key={index} sx={{ pl: 4 }}>
-            <ListItemText primary={subItem.label} />
-          </ListItemButton>
-        ))}
-      </List>
-    </Collapse>
+    <ThemeProvider theme={sideBarMenuSubItemListTheme}>
+      <CssBaseline />
+      <Collapse in={props.open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {props.subitems.map((subItem, index) => (
+            <ListItemButton
+              key={index}
+              className="MuiListItemButton-sideBarMenuSubItemList"
+              sx={{
+                paddingLeft: "32px",
+                backgroundColor: "#E0E0E0",
+                "&:hover": {
+                  backgroundColor: "gray",
+                },
+              }}
+            >
+              <ListItemText primary={subItem.label} />
+            </ListItemButton>
+          ))}
+        </List>
+      </Collapse>
+    </ThemeProvider>
   );
 };
 
@@ -92,56 +91,45 @@ const MenuItem = ({
   );
 };
 
-const MenuItems = () => {
+export const MenuItems = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-        <MenuItem
-          label="Produtos"
-          icon={<InventoryIcon />}
-          subItems={[{ label: "Criar novo", location: "foo" }]}
-        />
-        <Divider />
-        <MenuItem
-          label="Fluxo de Caixa"
-          icon={<PointOfSaleIcon />}
-          subItems={[
-            { label: "Detalhamento", location: "foo" },
-            { label: "Estoque", location: "foo" },
-          ]}
-        />
-        <Divider />
-        <Box
-          sx={{
-            marginTop: "auto",
-          }}
-        >
-          <MenuItem label="Logout" icon={<LogoutIcon />} subItems={[]} />
-        </Box>
-      </List>
-    </Box>
+    <ThemeProvider theme={sideBarMenuItemsTheme}>
+      <CssBaseline />
+      <Box className="MuiBox-menuItems">
+        <List className="MuiList-menuItems">
+          <MenuItem
+            label="Produtos"
+            icon={<InventoryIcon />}
+            subItems={[{ label: "Criar novo", location: "foo" }]}
+          />
+          <Divider />
+          <MenuItem
+            label="Fluxo de Caixa"
+            icon={<PointOfSaleIcon />}
+            subItems={[
+              { label: "Detalhamento", location: "foo" },
+              { label: "Estoque", location: "foo" },
+            ]}
+          />
+          <Divider />
+          <Box className="MuiBox-menuItemsFooter">
+            <MenuItem label="Logout" icon={<LogoutIcon />} subItems={[]} />
+          </Box>
+        </List>
+      </Box>
+    </ThemeProvider>
   );
 };
 
 export const SideBar = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100vh",
-        bgcolor: "background.paper",
-        borderRight: "1px solid #ccc",
-      }}
-    >
-      <SideBarLogo />
-      <Divider />
-      <MenuItems />
-    </Box>
+    <ThemeProvider theme={sideBarTheme}>
+      <CssBaseline />
+      <Box className="MuiBox-sidebar">
+        <SideBarLogo />
+        <Divider />
+        <MenuItems />
+      </Box>
+    </ThemeProvider>
   );
 };

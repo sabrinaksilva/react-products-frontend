@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
 
-export const StockSection = () => {
+export const StockListingSection = () => {
   return <Container>Estoque (StockSection) </Container>;
 };
