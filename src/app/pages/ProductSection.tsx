@@ -1,5 +1,10 @@
 import { Container } from "@mui/material";
+import { ProductsList } from "../components/products/ProductsList";
 
 export const ProductSection = () => {
-  return <Container>Produtos (ProductSection)</Container>;
+  return (
+    <Container>
+      <ProductsList />
+    </Container>
+  );
 };
