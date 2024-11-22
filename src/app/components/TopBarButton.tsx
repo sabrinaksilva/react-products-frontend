@@ -1,18 +1,16 @@
 import React from "react";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-interface INavigationButtonProps {
-  label: string;
-  onClick: () => void;
-}
-
-export const TopBarButton: React.FC<INavigationButtonProps> = ({
+export const TopBarButton = ({
   label,
-  onClick,
+  route,
+}: {
+  label: string;
+  route: string;
 }) => {
-  const handleClick = (): void => {
-    onClick?.();
-  };
+  const navigate = useNavigate();
+  const handleClick = () => navigate(route);
 
   return (
     <Button

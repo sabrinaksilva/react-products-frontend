@@ -1,13 +1,15 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PageWithTopBar from "../pages/PageWithTopBar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { MainPageWithRoutes } from "../components/MainPageWithRoutes";
 
-export const AppRoutes = () => {
+export const AppRoutes: React.FC = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<PageWithTopBar />} />
+        <Route path="/" element={<MainPageWithRoutes />} />
+        <Route path="/stock" element={<MainPageWithRoutes />} />
+        <Route path="/products" element={<MainPageWithRoutes />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
