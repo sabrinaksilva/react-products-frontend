@@ -3,16 +3,19 @@ import React from "react";
 
 import logo from "../../../assets/logo_sigma.png";
 
-export const TopBarLogo = () => {
+export const SideBarLogo = () => {
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
-        gap: 2,
+        justifyContent: "center",
+        width: "100%",
+        marginTop: 2,
+        marginBottom: 2,
       }}
     >
-      <img src={String(logo)} alt="Logo Sigma" style={{ height: "40px" }} />
+      <img src={String(logo)} alt="Logo Sigma" />
     </Box>
   );
 };

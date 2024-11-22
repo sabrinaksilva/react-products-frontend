@@ -10,6 +10,7 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import { SvgIconProps } from "@mui/material/SvgIcon";
 import Divider from "@mui/material/Divider";
+import { SideBarLogo } from "../topBar/SideBarLogo";
 
 const MenuItem = ({
   label,
@@ -79,11 +80,13 @@ export const SideBar = () => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
-        width: "240px",
         bgcolor: "background.paper",
         borderRight: "1px solid #ccc",
       }}
     >
+      <SideBarLogo />
+      <Divider />
+
       <MenuItems />
     </Box>
   );

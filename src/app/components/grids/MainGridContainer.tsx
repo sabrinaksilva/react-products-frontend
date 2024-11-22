@@ -1,30 +1,20 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid2";
 import { SideBar } from "./SideBar";
 import { MainPageWithRoutes } from "../../pages/MainPageWithRoutes";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-  ...theme.applyStyles("dark", {
-    backgroundColor: "#1A2027",
-  }),
-}));
-
 export const MainGridContainer = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid size={2}>
+    <Box sx={{ flexGrow: 1, height: "100vh" }}>
+      <Grid container spacing={0} sx={{ height: "100%" }}>
+        <Grid size={2} sx={{ height: "100%", backgroundColor: "blue" }}>
           <SideBar />
         </Grid>
-        <Grid size={10}>
+        <Grid
+          size={10}
+          sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+        >
           <MainPageWithRoutes />
         </Grid>
       </Grid>
