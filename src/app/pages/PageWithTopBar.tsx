@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { NavigationTopBar } from "../components/NavigationTopBar";
+import { MainTopBar } from "../components/MainTopBar";
 
 const theme = createTheme({
   palette: {
@@ -27,7 +27,7 @@ const PageWithTopBar: React.FC = () => {
           minHeight: "100vh",
         }}
       >
-        <NavigationTopBar />
+        <MainTopBar />
 
         <Box
           sx={{
