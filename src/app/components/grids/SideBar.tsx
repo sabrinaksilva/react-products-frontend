@@ -79,9 +79,9 @@ export const SideBar = () => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
-        width: "240px", // Largura fixa para sidebar
+        width: "240px",
         bgcolor: "background.paper",
-        borderRight: "1px solid #ccc", // Linha de divisão opcional
+        borderRight: "1px solid #ccc",
       }}
     >
       <MenuItems />
