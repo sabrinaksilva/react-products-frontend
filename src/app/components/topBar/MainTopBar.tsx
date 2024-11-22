@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { Box, Container } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { MainTheme } from "../styles/MainTheme";
+import { MainTheme } from "../../styles/MainTheme";
 import { TopBarLogo } from "./TopBarLogo";
 import { TopBarButton } from "./TopBarButton";
 import { LogOutButton } from "./LogOutButton";

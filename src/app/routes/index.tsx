@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { MainPageWithRoutes } from "../components/MainPageWithRoutes";
+import { MainPageWithRoutes } from "../pages/MainPageWithRoutes";
 
 export const AppRoutes: React.FC = () => {
   return (

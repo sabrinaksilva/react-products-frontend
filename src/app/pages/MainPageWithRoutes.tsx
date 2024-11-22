@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
-import { MainTopBar } from "./MainTopBar";
-import { StockSection } from "../pages/StockSection";
-import { ProductSection } from "../pages/ProductSection";
+import { MainTopBar } from "../components/topBar/MainTopBar";
+import { StockSection } from "./StockSection";
+import { ProductSection } from "./ProductSection";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
