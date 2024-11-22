@@ -34,8 +34,8 @@ export const MainTopBar: React.FC = () => {
                 gap: 2,
               }}
             >
-              <TopBarButton label="ESTOQUE" route="/stock" />
               <TopBarButton label="PRODUTOS" route="/products" />
+              <TopBarButton label="ESTOQUE" route="/stock" />
             </Box>
           </Box>
           <LogOutButton />

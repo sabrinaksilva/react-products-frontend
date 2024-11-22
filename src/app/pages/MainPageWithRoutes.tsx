@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import { MainTopBar } from "../components/topBar/MainTopBar";
 import { StockSection } from "./StockSection";
 import { ProductSection } from "./ProductSection";
+import { Foo } from "../components/grids/foo";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ export const MainPageWithRoutes: React.FC = () => {
         {location.pathname === "/" && <StockSection />}
         {location.pathname === "/stock" && <StockSection />}
         {location.pathname === "/products" && <ProductSection />}
+        {location.pathname === "/foo" && <Foo />}
       </Box>
     </Box>
   );

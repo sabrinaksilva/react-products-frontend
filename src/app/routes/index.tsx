@@ -9,6 +9,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="/" element={<MainGridContainer />} />
         <Route path="/stock" element={<MainGridContainer />} />
         <Route path="/products" element={<MainGridContainer />} />
+        <Route path="/foo" element={<MainGridContainer />} />
       </Routes>
     </Router>
   );
