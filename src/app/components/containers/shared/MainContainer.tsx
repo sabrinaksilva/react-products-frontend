@@ -39,10 +39,15 @@ export const MainContainer: React.FC<MainContainerProps> = ({
         flexDirection: "column",
       }}
     >
-      <Box sx={{ width: "100%", paddingBottom: 2, textAlign: "left" }}>
+      <Box
+        sx={{
+          width: "100%",
+          paddingBottom: 2,
+          textAlign: "left",
+        }}
+      >
         <h1
           style={{
-            fontFamily: "Geneva, sans-serif",
             fontWeight: "bold",
             color: "#884d0f",
             fontSize: "24px",
@@ -58,7 +63,7 @@ export const MainContainer: React.FC<MainContainerProps> = ({
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start",
+          alignItems: "center",
           width: "100%",
           gap: 3,
         }}

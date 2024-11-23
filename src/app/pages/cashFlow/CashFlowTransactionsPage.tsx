@@ -20,7 +20,7 @@ export const CashFlowTransactionsPage = () => {
   return (
     <MainContainer
       width="150vh"
-      height="100vh"
+      height="100%"
       title="FLUXO DE CAIXA - CONTROLE DE TRANSAÇÕES"
       paddingX={8}
       paddingY={4}
@@ -31,7 +31,7 @@ export const CashFlowTransactionsPage = () => {
             display: "flex",
             justifyContent: "flex-start",
             width: "100%",
-            height: "80vh",
+            height: "100%",
           }}
         >
           <CashFlowBox transactions={transactions} />

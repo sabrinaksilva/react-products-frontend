@@ -92,10 +92,10 @@ export const CashFlowBox = ({
       sx={{
         display: "flex",
         flexDirection: "column",
-        height: "100vh%", // Ajusta para ocupar o espaço disponível
-        width: "100%", // Garante que o Box não ultrapasse o componente pai
-        maxHeight: "100%", // Limita a altura para não exceder o pai
-        overflow: "hidden", // Impede que elementos internos ultrapassem os limites
+        height: "100%",
+        width: "100%",
+        maxHeight: "100%",
+        overflow: "hidden",
       }}
     >
       <SubTitleSection />

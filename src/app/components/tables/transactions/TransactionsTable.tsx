@@ -19,6 +19,9 @@ const TransactionTableHeader = ({ label }: { label: string }) => {
       style={{
         backgroundColor: theme.palette.primary.main,
         color: "white",
+        position: "sticky",
+        top: 0,
+        zIndex: 1,
       }}
     >
       {label}
@@ -29,7 +32,11 @@ const TransactionTableHeader = ({ label }: { label: string }) => {
 export const TransactionsTableHeader = () => {
   return (
     <TableHead>
-      <TableRow>
+      <TableRow
+        style={{
+          backgroundColor: theme.palette.custom.secondaryBackground,
+        }}
+      >
         <TransactionTableHeader label={"Id"} />
         <TransactionTableHeader label={"Data"} />
         <TransactionTableHeader label={"Código do Produto"} />
@@ -46,6 +53,26 @@ export const TransactionTable = ({
 }: {
   transactions: Transaction[];
 }) => {
+  const formatDate = (date: Date): string => {
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  const renderTransactionType = (type: "in" | "out") => {
+    return (
+      <span
+        style={{
+          fontWeight: "bold",
+          color: type === "in" ? "green" : "red",
+        }}
+      >
+        {type === "in" ? "ENTRADA" : "SAÍDA"}
+      </span>
+    );
+  };
+
   return (
     <TableContainer component={Paper} elevation={5} sx={{ overflow: "hidden" }}>
       <Table>
@@ -59,13 +86,11 @@ export const TransactionTable = ({
               }}
             >
               <TableCell>{transaction.id}</TableCell>
-              <TableCell>{transaction.date.toLocaleDateString()}</TableCell>
+              <TableCell>{formatDate(new Date(transaction.date))}</TableCell>
               <TableCell>{transaction.productId}</TableCell>
-              <TableCell>
-                {transaction.type === "in" ? "Entrada" : "Saída"}
-              </TableCell>
+              <TableCell>{renderTransactionType(transaction.type)}</TableCell>
               <TableCell>{transaction.productQuantity}</TableCell>
-              <TableCell>{transaction.totalValue.toFixed(2)}</TableCell>
+              <TableCell>R$ {transaction.totalValue.toFixed(2)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

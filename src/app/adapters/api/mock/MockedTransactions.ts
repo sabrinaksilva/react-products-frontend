@@ -3,7 +3,7 @@ import { Transaction } from "../../../domain/Transaction";
 export const transactions: Transaction[] = [
   {
     id: "c67ad197-b4a8-44a5-ae72-7b8e4aa0ebc4",
-    date: new Date("25/12/2023"),
+    date: new Date("2023-12-25"),
     productId: "c375d6fc-d9c7-41b6-b179-f9b06bf73728",
     type: "out",
     productQuantity: 7,
@@ -11,7 +11,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "f7f9c46c-f441-46e8-8351-df0b85fabbea",
-    date: new Date("22/06/2024"),
+    date: new Date("2024-06-22"),
     productId: "0dd50209-2596-4adf-bca3-91cae570292b",
     type: "out",
     productQuantity: 3,
@@ -19,7 +19,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "b6fe2cbc-77e7-4981-b3cc-16b9c6e80ccb",
-    date: new Date("06/05/2024"),
+    date: new Date("2024-05-06"),
     productId: "a0865bf4-efd3-470c-9354-6a4fa6982d09",
     type: "in",
     productQuantity: 6,
@@ -27,7 +27,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "7027dac8-876b-4a7a-9237-2971a49e801d",
-    date: new Date("31/10/2024"),
+    date: new Date("2024-10-31"),
     productId: "843942c3-061c-4261-8a53-c75efe467532",
     type: "in",
     productQuantity: 3,
@@ -35,7 +35,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "12dd9ba2-c345-42de-ae0e-3dec44ce7cc8",
-    date: new Date("07/06/2024"),
+    date: new Date("2024-06-07"),
     productId: "5ba26d88-f622-40a2-84ee-8548f9dd9170",
     type: "in",
     productQuantity: 8,
@@ -43,7 +43,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "69302799-9b20-4166-b559-a58b27df5622",
-    date: new Date("07/02/2024"),
+    date: new Date("2024-02-07"),
     productId: "e63368be-f705-48a7-b973-94a752f3175d",
     type: "out",
     productQuantity: 6,
@@ -51,7 +51,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "58035753-266f-4789-a51e-4515afa33857",
-    date: new Date("16/08/2024"),
+    date: new Date("2024-08-16"),
     productId: "6bc5cfd5-425b-41e9-9b66-609553868b00",
     type: "in",
     productQuantity: 7,
@@ -59,7 +59,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "f5860c2c-e4a5-4183-8571-e62830df53e1",
-    date: new Date("18/04/2024"),
+    date: new Date("2024-04-18"),
     productId: "b550f42e-072a-4e44-9a0c-be5a33770519",
     type: "out",
     productQuantity: 8,
@@ -67,7 +67,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "539a4479-2c31-494d-bb34-4dd16f6c1cd5",
-    date: new Date("06/10/2024"),
+    date: new Date("2024-10-06"),
     productId: "803f6f19-6dda-4974-8a05-d2a15952ebf7",
     type: "in",
     productQuantity: 5,
@@ -75,7 +75,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "98e97b82-a610-4da3-949a-ee81867a7fd6",
-    date: new Date("03/08/2024"),
+    date: new Date("2024-08-03"),
     productId: "ecd8f978-b0ba-4e4b-bf70-9fd2b74f08bc",
     type: "in",
     productQuantity: 9,
@@ -83,7 +83,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "9326c9d8-fdb3-44c0-9751-769f15d7a4b5",
-    date: new Date("29/06/2024"),
+    date: new Date("2024-06-29"),
     productId: "cd558277-38e5-440c-940d-ff600691bacc",
     type: "out",
     productQuantity: 8,
@@ -91,7 +91,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "fff54f26-88fa-4671-9712-e0dac1445581",
-    date: new Date("03/11/2024"),
+    date: new Date("2024-11-03"),
     productId: "6b7aabea-df73-444a-b75e-e20f04f24f03",
     type: "in",
     productQuantity: 1,
@@ -99,7 +99,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "aec7cca9-5d0d-4067-96d7-e15f102bf833",
-    date: new Date("19/03/2024"),
+    date: new Date("2024-03-19"),
     productId: "d79b96b0-79f8-486e-85a4-f0b619cc7bbb",
     type: "out",
     productQuantity: 6,
@@ -107,7 +107,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "e181121f-0e3b-4009-9a04-54f267295610",
-    date: new Date("03/02/2024"),
+    date: new Date("2024-02-03"),
     productId: "b550f42e-072a-4e44-9a0c-be5a33770519",
     type: "out",
     productQuantity: 4,
@@ -115,7 +115,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "759222bb-7bb1-4e39-8c66-a571b87ffa37",
-    date: new Date("21/03/2024"),
+    date: new Date("2024-03-21"),
     productId: "71cb3a98-bc9c-475f-bb86-5d315b652147",
     type: "in",
     productQuantity: 10,
@@ -123,7 +123,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "e1a5d48a-89c8-4fa1-8ff7-f44088c04d03",
-    date: new Date("24/06/2024"),
+    date: new Date("2024-06-24"),
     productId: "a0865bf4-efd3-470c-9354-6a4fa6982d09",
     type: "in",
     productQuantity: 8,
@@ -131,7 +131,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "797a12b4-881a-4fa6-b365-20c7f6f56537",
-    date: new Date("14/08/2024"),
+    date: new Date("2024-08-14"),
     productId: "803f6f19-6dda-4974-8a05-d2a15952ebf7",
     type: "out",
     productQuantity: 4,
@@ -139,7 +139,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "46c1467c-0458-4b98-987f-fa3f0172431a",
-    date: new Date("19/08/2024"),
+    date: new Date("2024-08-19"),
     productId: "fa346f82-b276-4026-8e04-1e10cfcd99c8",
     type: "out",
     productQuantity: 10,
@@ -147,7 +147,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "803930a6-2fcd-4202-8898-51361d06b700",
-    date: new Date("01/04/2024"),
+    date: new Date("2024-04-01"),
     productId: "b550f42e-072a-4e44-9a0c-be5a33770519",
     type: "out",
     productQuantity: 2,
@@ -155,7 +155,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "e09d02c2-100a-4c57-bc98-ddaeee553754",
-    date: new Date("03/12/2023"),
+    date: new Date("2023-12-03"),
     productId: "c6436880-d243-4b60-a4f3-494d687bc7f9",
     type: "out",
     productQuantity: 2,
@@ -163,7 +163,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "200cb6b6-4722-4699-ac32-f7a02a39aeb8",
-    date: new Date("24/05/2024"),
+    date: new Date("2024-05-24"),
     productId: "19f71b48-aad5-4fdc-9fea-bd26f1c418d0",
     type: "in",
     productQuantity: 8,
@@ -171,7 +171,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "fa8f3389-77c8-41d5-a116-76a6deed1046",
-    date: new Date("22/12/2023"),
+    date: new Date("2023-12-22"),
     productId: "160e7ca9-776b-43c7-b088-e1bc47d91b12",
     type: "out",
     productQuantity: 4,
@@ -179,7 +179,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "e3305ace-f9ac-458a-bf38-6103d09ada71",
-    date: new Date("20/08/2024"),
+    date: new Date("2024-08-20"),
     productId: "5ba26d88-f622-40a2-84ee-8548f9dd9170",
     type: "out",
     productQuantity: 7,
@@ -187,7 +187,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "d25a90c4-c5d3-47cf-97b0-dee8f6d2cdc2",
-    date: new Date("31/08/2024"),
+    date: new Date("2024-08-31"),
     productId: "f5e15466-a635-4ea3-9ac9-d12e48cf1089",
     type: "in",
     productQuantity: 5,
@@ -195,7 +195,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "9287accb-acbb-43b8-a207-4a24f10ddd09",
-    date: new Date("21/05/2024"),
+    date: new Date("2024-05-21"),
     productId: "66e51d73-020d-43ff-b36c-93d48cfa8a37",
     type: "out",
     productQuantity: 2,
@@ -203,7 +203,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "0fe01fa6-5c56-4f74-931b-fd40ba4d3ed5",
-    date: new Date("26/11/2023"),
+    date: new Date("2023-11-26"),
     productId: "cd558277-38e5-440c-940d-ff600691bacc",
     type: "in",
     productQuantity: 5,
@@ -211,7 +211,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "e3d3593e-91c3-40bb-97c4-04745f12a486",
-    date: new Date("05/07/2024"),
+    date: new Date("2024-07-05"),
     productId: "2a4c646f-4a4a-4ce7-b2b5-ac10a072fb02",
     type: "out",
     productQuantity: 5,
@@ -219,7 +219,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "88b78934-b019-42de-94fc-b1f62d8db8a0",
-    date: new Date("24/08/2024"),
+    date: new Date("2024-08-24"),
     productId: "8a57516f-239d-4684-b381-877f518b51a9",
     type: "out",
     productQuantity: 2,
@@ -227,7 +227,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "24f982fc-4243-4fc8-9896-04ac87fbab50",
-    date: new Date("23/09/2024"),
+    date: new Date("2024-09-23"),
     productId: "0dd50209-2596-4adf-bca3-91cae570292b",
     type: "out",
     productQuantity: 6,
@@ -235,7 +235,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "08db2bf6-8f34-4df5-82b0-be5f1afc98a0",
-    date: new Date("10/09/2024"),
+    date: new Date("2024-09-10"),
     productId: "19f71b48-aad5-4fdc-9fea-bd26f1c418d0",
     type: "out",
     productQuantity: 9,
@@ -243,7 +243,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "74698dac-18d1-41f9-81b1-51c22ae41b5b",
-    date: new Date("04/05/2024"),
+    date: new Date("2024-05-04"),
     productId: "66e51d73-020d-43ff-b36c-93d48cfa8a37",
     type: "in",
     productQuantity: 6,
@@ -251,7 +251,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "8e625ccc-ac2c-43c4-a906-4c2143181874",
-    date: new Date("28/01/2024"),
+    date: new Date("2024-01-28"),
     productId: "160e7ca9-776b-43c7-b088-e1bc47d91b12",
     type: "out",
     productQuantity: 10,
@@ -259,7 +259,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "1de3f693-0d32-482f-8d4a-08c1fe2a02ad",
-    date: new Date("16/05/2024"),
+    date: new Date("2024-05-16"),
     productId: "b550f42e-072a-4e44-9a0c-be5a33770519",
     type: "in",
     productQuantity: 2,
@@ -267,7 +267,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "44cae072-f872-4a90-9b5d-c4abc8495298",
-    date: new Date("23/05/2024"),
+    date: new Date("2024-05-23"),
     productId: "6b7aabea-df73-444a-b75e-e20f04f24f03",
     type: "out",
     productQuantity: 2,
@@ -275,7 +275,7 @@ export const transactions: Transaction[] = [
   },
   {
     id: "1b61a5e5-f6d2-4cc9-95f6-3e63792f21de",
-    date: new Date("28/10/2024"),
+    date: new Date("2024-10-28"),
     productId: "d79b96b0-79f8-486e-85a4-f0b619cc7bbb",
     type: "out",
     productQuantity: 2,

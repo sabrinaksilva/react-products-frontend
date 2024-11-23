@@ -8,6 +8,7 @@ import { mainPageWithRoutesTheme } from "../../styles/main/MainTheme";
 import { CreateProductPage } from "../products/CreateProductPage";
 import { CashFlowTransactionsPage } from "../cashFlow/CashFlowTransactionsPage";
 import { EditProductPage } from "../products/EditProductPage";
+import { CreateTransactionPage } from "../cashFlow/CreateTransactionPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -26,7 +27,9 @@ export const MainPageWithRoutes: React.FC = () => {
           {location.pathname === "/cash-flow/transactions" && (
             <CashFlowTransactionsPage />
           )}
-          {location.pathname === "/cash-flow/transactions/new" && <Foo />}
+          {location.pathname === "/cash-flow/transactions/new" && (
+            <CreateTransactionPage />
+          )}
           {location.pathname === "/foo" && <Foo />}
         </Box>
       </Box>
