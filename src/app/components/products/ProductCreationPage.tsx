@@ -1,32 +1,9 @@
 import * as React from "react";
-import { useState } from "react";
-import { styled } from "@mui/material/styles";
-import {
-  TextField,
-  Button,
-  Box,
-  Paper,
-  InputAdornment,
-  Divider,
-} from "@mui/material";
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  color: theme.palette.text.secondary,
-  lineHeight: "10px",
-}));
-
-export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  costPrice: number;
-}
+import { Box, Button, InputAdornment, TextField } from "@mui/material";
+import { MainContainer } from "../containers/MainContainer";
 
 export const ProductCreationPage = () => {
-  const [product, setProduct] = useState<Product>({
+  const [product, setProduct] = React.useState({
     id: "",
     name: "",
     description: "",
@@ -41,43 +18,20 @@ export const ProductCreationPage = () => {
   };
 
   return (
-    <Item
-      elevation={4}
-      square={false}
-      sx={{
-        width: "150vh",
-        height: "70vh",
-        padding: 4,
-        backgroundColor: "#F3EBDE",
-        display: "flex",
-        flexDirection: "column",
-      }}
+    <MainContainer
+      width="150vh"
+      height="70vh"
+      title="NOVO PRODUTO"
+      paddingX={8}
+      paddingY={4}
     >
-      <Box sx={{ width: "100%", paddingBottom: 2, textAlign: "left" }}>
-        <h1
-          style={{
-            fontFamily: "Geneva, sans-serif",
-            fontWeight: "bold",
-            color: "#884d0f",
-            fontSize: "24px",
-            margin: 20,
-          }}
-        >
-          NOVO PRODUTO
-        </h1>
-        <Divider sx={{ marginTop: 5, borderColor: "#884d0f" }} />
-      </Box>
-
       <Box
         component="form"
         sx={{
-          flex: 1,
+          width: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
           gap: 3,
-          paddingX: 8,
         }}
         onSubmit={handleSubmit}
       >
@@ -118,7 +72,6 @@ export const ProductCreationPage = () => {
             setProduct({ ...product, description: e.target.value || "" })
           }
           fullWidth
-          sx={{ maxWidth: "100%" }}
         />
         <Box
           sx={{
@@ -182,6 +135,6 @@ export const ProductCreationPage = () => {
           Salvar
         </Button>
       </Box>
-    </Item>
+    </MainContainer>
   );
 };

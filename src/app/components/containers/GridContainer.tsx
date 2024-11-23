@@ -5,7 +5,7 @@ import { SideBar } from "../sidebars/SideBar";
 import { MainPageWithRoutes } from "../../pages/MainPageWithRoutes";
 import { mainGridContainerTheme } from "../../styles/main/MainTheme";
 
-export const MainGridContainer = () => {
+export const GridContainer = () => {
   return (
     <ThemeProvider theme={mainGridContainerTheme}>
       <CssBaseline />

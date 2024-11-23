@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { Box, CssBaseline, TextField, ThemeProvider } from "@mui/material";
-import { TopBarButton } from "./TopBarButton";
+import { TopBarButton } from "../buttons/TopBarButton";
 import { mainTheme } from "../../styles/main/MainTheme";
-import { FilterButton } from "./FilterButton";
+import { FilterButton } from "../buttons/FilterButton";
 
 export const MainTopBar: React.FC = () => {
   const [productName, setProductName] = React.useState("");
