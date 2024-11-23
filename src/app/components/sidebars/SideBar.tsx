@@ -111,8 +111,8 @@ export const MenuItems = () => {
             label="Fluxo de Caixa"
             icon={<PointOfSaleIcon />}
             subItems={[
-              { label: "Detalhamento", location: "/foo" },
-              { label: "Estoque", location: "/stock" },
+              { label: "Resumo Financeiro", location: "/cash-flow/overview" },
+              { label: "Movimentações", location: "/cash-flow/transactions" },
             ]}
           />
           <Divider />

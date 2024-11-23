@@ -7,6 +7,7 @@ import { ProductListingSection } from "./ProductListingSection";
 import { Foo } from "../components/foo";
 import { mainPageWithRoutesTheme } from "../styles/main/MainTheme";
 import { ProductCreationPage } from "../components/products/ProductCreationPage";
+import { CashFlowTransactionsPage } from "./CashFlowTransactionsPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -18,9 +19,14 @@ export const MainPageWithRoutes: React.FC = () => {
         <MainTopBar />
         <Box className="MuiBox-contentMainPageWithRoutes">
           {location.pathname === "/" && <ProductListingSection />}
-          {location.pathname === "/stock" && <StockListingSection />}
           {location.pathname === "/products" && <ProductListingSection />}
           {location.pathname === "/products/new" && <ProductCreationPage />}
+          {location.pathname === "/cash-flow/overview" && <Foo />}
+          {location.pathname === "/cash-flow/transactions" && (
+            <CashFlowTransactionsPage />
+          )}
+          {location.pathname === "/cash-flow/transactions/new" && <Foo />}
+
           {location.pathname === "/foo" && <Foo />}
         </Box>
       </Box>

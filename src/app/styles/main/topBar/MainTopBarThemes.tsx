@@ -46,17 +46,3 @@ export const mainTopBarToolBarTheme = createTheme({
     },
   },
 });
-
-export const mainTopBarButtonTheme = createTheme({
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        ".MuiButton-mainTopBarButton": {
-          fontSize: "14px",
-          fontWeight: "bold",
-          textTransform: "none",
-        },
-      },
-    },
-  },
-});

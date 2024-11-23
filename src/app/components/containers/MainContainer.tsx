@@ -58,8 +58,8 @@ export const MainContainer: React.FC<MainContainerProps> = ({
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          alignItems: "flex-start",
+          width: "100%",
           gap: 3,
         }}
       >

@@ -1,9 +1,23 @@
 import React from "react";
 import { Button, CssBaseline, ThemeProvider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { mainTopBarButtonTheme } from "../../styles/main/topBar/MainTopBarThemes";
+import { createTheme } from "@mui/material/styles";
 
-export const TopBarButton = ({
+const mainTopBarButtonTheme = createTheme({
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        ".MuiButton-mainTopBarButton": {
+          fontSize: "14px",
+          fontWeight: "bold",
+          textTransform: "none",
+        },
+      },
+    },
+  },
+});
+
+export const NavigationButton = ({
   label,
   route,
 }: {

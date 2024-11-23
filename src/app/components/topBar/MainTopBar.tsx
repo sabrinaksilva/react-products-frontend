@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { Box, CssBaseline, TextField, ThemeProvider } from "@mui/material";
-import { TopBarButton } from "../buttons/TopBarButton";
+import { NavigationButton } from "../buttons/NavigationButton";
 import { mainTheme } from "../../styles/main/MainTheme";
 import { FilterButton } from "../buttons/FilterButton";
 
@@ -26,8 +26,8 @@ export const MainTopBar: React.FC = () => {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <TopBarButton label="PRODUTOS" route="/products" />
-            <TopBarButton label="ESTOQUE" route="/stock" />
+            <NavigationButton label="PRODUTOS" route="/products" />
+            <NavigationButton label="ESTOQUE" route="/stock" />
           </Box>
 
           {isProductsPage && (

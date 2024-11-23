@@ -3,7 +3,12 @@ import { ProductsList } from "../components/products/ProductsList";
 
 export const ProductListingSection = () => {
   return (
-    <Container>
+    <Container
+      sx={{
+        padding: "8px",
+        margin: "8px auto",
+      }}
+    >
       <ProductsList />
     </Container>
   );
