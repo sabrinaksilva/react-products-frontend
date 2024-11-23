@@ -1,8 +1,16 @@
-import { Box, Button, CssBaseline, ThemeProvider } from "@mui/material";
+import {
+  Box,
+  Button,
+  CssBaseline,
+  ThemeProvider,
+  Divider,
+  Paper,
+} from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import Divider from "@mui/material/Divider";
+import { Transaction } from "../../../domain/Transaction";
+import { TransactionTable } from "../../tables/transactions/TransactionsTable";
 
 const cashFlowTheme = createTheme({
   palette: {
@@ -36,6 +44,7 @@ const NewTransactionButton = () => {
     <ThemeProvider theme={cashFlowTheme}>
       <CssBaseline />
       <Box
+        className="new-transaction-button-container"
         sx={{
           width: "100%",
           display: "flex",
@@ -44,7 +53,11 @@ const NewTransactionButton = () => {
           paddingLeft: 2,
         }}
       >
-        <Button variant="contained" onClick={handleClick}>
+        <Button
+          className="new-transaction-button"
+          variant="contained"
+          onClick={handleClick}
+        >
           NOVA TRANSAÇÃO
         </Button>
       </Box>
@@ -55,6 +68,7 @@ const NewTransactionButton = () => {
 const SubTitleSection = () => {
   return (
     <Box
+      className="subtitle-section-container"
       sx={{
         display: "flex",
         justifyContent: "flex-start",
@@ -67,19 +81,39 @@ const SubTitleSection = () => {
   );
 };
 
-export const CashFlowBox = () => {
+export const CashFlowBox = ({
+  transactions,
+}: {
+  transactions: Transaction[];
+}) => {
   return (
     <Box
+      className="cash-flow-box-container"
       sx={{
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
-        flex: 1,
-        overflow: "auto",
+        height: "100vh%", // Ajusta para ocupar o espaço disponível
+        width: "100%", // Garante que o Box não ultrapasse o componente pai
+        maxHeight: "100%", // Limita a altura para não exceder o pai
+        overflow: "hidden", // Impede que elementos internos ultrapassem os limites
       }}
     >
       <SubTitleSection />
-      <Divider sx={{ marginTop: 5, borderColor: "#884d0f" }} />
+      <Divider
+        className="cash-flow-divider"
+        sx={{ marginTop: 5, borderColor: "#884d0f" }}
+      />
+      <Paper
+        className="cash-flow-paper"
+        elevation={5}
+        sx={{
+          margin: 2,
+          flex: 1,
+          overflow: "auto",
+        }}
+      >
+        <TransactionTable transactions={transactions} />
+      </Paper>
     </Box>
   );
 };

@@ -1,5 +1,5 @@
-import { Product } from "../../domain/Product";
-import { productList } from "./mock/MockedProducts";
+import { Product } from "../../../domain/Product";
+import { productList } from "./MockedProducts";
 import { v4 as uuidv4 } from "uuid";
 
 const products = productList;

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Product } from "../../domain/Product";
-import { API_URL } from "../../shared/config";
+import { Product } from "../../../domain/Product";
+import { API_URL } from "../../../shared/config";
 
 export const ProductService = {
   async getAll(): Promise<Product[]> {

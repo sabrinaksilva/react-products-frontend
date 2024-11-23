@@ -1,4 +1,4 @@
-import { ProductServiceMock } from "../adapters/api/ProductServiceMock";
+import { ProductServiceMock } from "../adapters/api/mock/ProductServiceMock";
 import { Product } from "../domain/Product";
 
 export class ListProductsUseCase {

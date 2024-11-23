@@ -41,13 +41,7 @@ export const ProductsTableHeader = () => {
   );
 };
 
-export const ProductTable = ({
-  product,
-  index,
-}: {
-  product: Product;
-  index: number;
-}) => {
+export const ProductTable = ({ product }: { product: Product }) => {
   return (
     <TableContainer component={Paper}>
       <Table>

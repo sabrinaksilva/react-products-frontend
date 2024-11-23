@@ -66,7 +66,7 @@ export const ProductAccordionLine = ({
         </Box>
       </AccordionSummary>
       <AccordionDetails>
-        <ProductTable product={product} index={index} />
+        <ProductTable product={product} />
       </AccordionDetails>
     </Accordion>
   );
