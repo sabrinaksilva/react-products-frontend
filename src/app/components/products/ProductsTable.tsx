@@ -33,7 +33,8 @@ export const ProductsTableHeader = () => {
         <ProductTableHeader label={"Código"} />
         <ProductTableHeader label={"Nome"} />
         <ProductTableHeader label={"Descrição"} />
-        <ProductTableHeader label={"Preço unitário"} />
+        <ProductTableHeader label={"Valor unitário de custo"} />
+        <ProductTableHeader label={"Valor unitário de venda"} />
         <ProductTableHeader label={"Quantidade em estoque"} />
       </TableRow>
     </TableHead>
@@ -61,6 +62,7 @@ export const ProductTable = ({
             <TableCell>{product.id}</TableCell>
             <TableCell>{product.name}</TableCell>
             <TableCell>{product.description}</TableCell>
+            <TableCell>{product.costPrice.toFixed(2)}</TableCell>
             <TableCell>{product.price.toFixed(2)}</TableCell>
             <TableCell>{product.quantity}</TableCell>
           </TableRow>

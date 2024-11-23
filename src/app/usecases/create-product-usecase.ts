@@ -5,6 +5,7 @@ export const createProduct = (
   name: string,
   description: string,
   price: number,
+  costPrice: number,
   quantity: number,
 ): Product => {
   return {
@@ -12,6 +13,7 @@ export const createProduct = (
     name,
     description,
     price,
+    costPrice,
     quantity,
   };
 };
