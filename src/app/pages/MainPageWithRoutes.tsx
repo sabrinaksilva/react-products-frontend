@@ -6,6 +6,7 @@ import { StockListingSection } from "./StockListingSection";
 import { ProductListingSection } from "./ProductListingSection";
 import { Foo } from "../components/grids/foo";
 import { mainPageWithRoutesTheme } from "../styles/main/MainTheme";
+import { ProductCreationPage } from "../components/products/ProductCreationPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ export const MainPageWithRoutes: React.FC = () => {
           {location.pathname === "/" && <ProductListingSection />}
           {location.pathname === "/stock" && <StockListingSection />}
           {location.pathname === "/products" && <ProductListingSection />}
+          {location.pathname === "/products/new" && <ProductCreationPage />}
           {location.pathname === "/foo" && <Foo />}
         </Box>
       </Box>

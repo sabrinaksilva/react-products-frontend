@@ -104,7 +104,7 @@ export const MenuItems = () => {
           <MenuItem
             label="Produtos"
             icon={<InventoryIcon />}
-            subItems={[{ label: "Criar novo", location: "/foo" }]}
+            subItems={[{ label: "Criar novo", location: "/products/new" }]}
           />
           <Divider />
           <MenuItem
