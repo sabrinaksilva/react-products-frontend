@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { Box, CssBaseline, TextField, ThemeProvider } from "@mui/material";
@@ -9,6 +10,8 @@ import { FilterButton } from "./FilterButton";
 export const MainTopBar: React.FC = () => {
   const [productName, setProductName] = React.useState("");
   const [productDescription, setProductDescription] = React.useState("");
+  const location = useLocation();
+  const isProductsPage = location.pathname === "/products";
 
   return (
     <ThemeProvider theme={mainTheme}>
@@ -27,35 +30,37 @@ export const MainTopBar: React.FC = () => {
             <TopBarButton label="ESTOQUE" route="/stock" />
           </Box>
 
-          <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <TextField
-              label="Nome"
-              value={productName}
-              onChange={(e) => setProductName(e.target.value)}
-              variant="outlined"
-              size="small"
-              sx={{
-                backgroundColor: "#fff",
-                borderRadius: "4px",
-                minWidth: "300ps",
-              }}
-            />
+          {isProductsPage && (
+            <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <TextField
+                label="Nome"
+                value={productName}
+                onChange={(e) => setProductName(e.target.value)}
+                variant="outlined"
+                size="small"
+                sx={{
+                  backgroundColor: "#fff",
+                  borderRadius: "4px",
+                  minWidth: "300px",
+                }}
+              />
 
-            <TextField
-              label="Descrição"
-              value={productDescription}
-              onChange={(e) => setProductDescription(e.target.value)}
-              variant="outlined"
-              size="small"
-              sx={{
-                backgroundColor: "#fff",
-                borderRadius: "4px",
-                minWidth: "450px",
-              }}
-            />
+              <TextField
+                label="Descrição"
+                value={productDescription}
+                onChange={(e) => setProductDescription(e.target.value)}
+                variant="outlined"
+                size="small"
+                sx={{
+                  backgroundColor: "#fff",
+                  borderRadius: "4px",
+                  minWidth: "450px",
+                }}
+              />
 
-            <FilterButton />
-          </Box>
+              <FilterButton />
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
     </ThemeProvider>
