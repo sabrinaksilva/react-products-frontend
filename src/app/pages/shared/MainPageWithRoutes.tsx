@@ -5,8 +5,9 @@ import { MainTopBar } from "../../components/navigation/topBars/MainTopBar";
 import { ProductListingSection } from "../../components/listing/products/ProductListingSection";
 import { Foo } from "../../components/foo";
 import { mainPageWithRoutesTheme } from "../../styles/main/MainTheme";
-import { ProductCreationPage } from "../products/ProductCreationPage";
+import { CreateProductPage } from "../products/CreateProductPage";
 import { CashFlowTransactionsPage } from "../cashFlow/CashFlowTransactionsPage";
+import { EditProductPage } from "../products/EditProductPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -19,13 +20,13 @@ export const MainPageWithRoutes: React.FC = () => {
         <Box className="MuiBox-contentMainPageWithRoutes">
           {location.pathname === "/" && <ProductListingSection />}
           {location.pathname === "/products" && <ProductListingSection />}
-          {location.pathname === "/products/new" && <ProductCreationPage />}
+          {location.pathname === "/products/new" && <CreateProductPage />}
+          {location.pathname === "/products/edit" && <EditProductPage />}
           {location.pathname === "/cash-flow/overview" && <Foo />}
           {location.pathname === "/cash-flow/transactions" && (
             <CashFlowTransactionsPage />
           )}
           {location.pathname === "/cash-flow/transactions/new" && <Foo />}
-
           {location.pathname === "/foo" && <Foo />}
         </Box>
       </Box>

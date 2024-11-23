@@ -4,6 +4,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom";
 import * as React from "react";
 import { ProductTable } from "../../tables/products/ProductsTable";
 import { Product } from "../../../domain/Product";
@@ -16,9 +17,10 @@ export const ProductAccordionLine = ({
   index: number;
 }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleEditClick = () => {
-    console.log(`Editing product with ID: ${product.id}`);
+    navigate("/products/edit", { state: { product } });
   };
 
   const handleAccordionChange = (
