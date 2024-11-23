@@ -4,7 +4,7 @@ import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { MainTopBar } from "../components/topBar/MainTopBar";
 import { StockListingSection } from "./StockListingSection";
 import { ProductListingSection } from "./ProductListingSection";
-import { Foo } from "../components/grids/foo";
+import { Foo } from "../components/foo";
 import { mainPageWithRoutesTheme } from "../styles/main/MainTheme";
 import { ProductCreationPage } from "../components/products/ProductCreationPage";
 
