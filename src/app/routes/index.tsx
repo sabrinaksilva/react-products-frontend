@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { GridContainer } from "../components/containers/GridContainer";
+import { GridContainer } from "../components/containers/shared/GridContainer";
 
 export const AppRoutes: React.FC = () => {
   return (

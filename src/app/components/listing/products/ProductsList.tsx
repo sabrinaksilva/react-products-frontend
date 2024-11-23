@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { Product } from "../../domain/Product";
-import { ListProductsUseCase } from "../../usecases/list-products-use-case";
-import { productServiceSingleton } from "../../shared/singletons/ProductServiceSingleton";
+import { Product } from "../../../domain/Product";
+import { ListProductsUseCase } from "../../../usecases/list-products-use-case";
+import { productServiceSingleton } from "../../../shared/singletons/ProductServiceSingleton";
 import { ProductAccordionLine } from "./ProductAccordionLine";
 
 export const ProductsList = () => {

@@ -8,8 +8,8 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { mainTheme } from "../../styles/main/MainTheme";
-import { Product } from "../../domain/Product";
+import { mainTheme } from "../../../styles/main/MainTheme";
+import { Product } from "../../../domain/Product";
 
 const theme = mainTheme;
 

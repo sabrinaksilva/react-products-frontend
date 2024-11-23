@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, ThemeProvider, CssBaseline } from "@mui/material";
-import logo from "../../../assets/logo_sigma.png";
-import { logoTheme } from "../../styles/sidebar/LogoTheme";
+import logo from "../../../../assets/logo_sigma.png";
+import { logoTheme } from "../../../styles/sidebar/LogoTheme";
 
 export const SideBarLogo = () => {
   return (

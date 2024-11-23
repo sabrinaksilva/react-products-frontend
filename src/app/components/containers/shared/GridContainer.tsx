@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { SideBar } from "../sidebars/SideBar";
-import { MainPageWithRoutes } from "../../pages/MainPageWithRoutes";
-import { mainGridContainerTheme } from "../../styles/main/MainTheme";
+import { SideBar } from "../../navigation/sidebars/SideBar";
+import { MainPageWithRoutes } from "../../../pages/shared/MainPageWithRoutes";
+import { mainGridContainerTheme } from "../../../styles/main/MainTheme";
 
 export const GridContainer = () => {
   return (

@@ -1,5 +1,5 @@
-import { MainContainer } from "../components/containers/MainContainer";
-import { CashFlowBox } from "../components/cashFlow/CashFlowBox";
+import { MainContainer } from "../../components/containers/shared/MainContainer";
+import { CashFlowBox } from "../../components/containers/cashFlow/CashFlowBox";
 import { Box } from "@mui/material";
 
 export const CashFlowTransactionsPage = () => {

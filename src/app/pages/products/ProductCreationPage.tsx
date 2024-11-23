@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Box, Button, InputAdornment, TextField } from "@mui/material";
-import { MainContainer } from "../containers/MainContainer";
+import { MainContainer } from "../../components/containers/shared/MainContainer";
 
 export const ProductCreationPage = () => {
   const [product, setProduct] = React.useState({

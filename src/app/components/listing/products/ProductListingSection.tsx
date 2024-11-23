@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import { ProductsList } from "../components/products/ProductsList";
+import { ProductsList } from "./ProductsList";
 
 export const ProductListingSection = () => {
   return (
