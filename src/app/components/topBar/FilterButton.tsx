@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Button, CssBaseline, ThemeProvider } from "@mui/material";
-import { logOutButtonTheme } from "../../styles/buttons/ButtonsThemes";
+import { filterButtonTheme } from "../../styles/buttons/ButtonsThemes";
 
-export const LogOutButton = () => {
+export const FilterButton = () => {
   return (
-    <ThemeProvider theme={logOutButtonTheme}>
+    <ThemeProvider theme={filterButtonTheme}>
       <CssBaseline />
       <Box className="MuiBox-logOutButton">
         <Button
@@ -12,7 +12,7 @@ export const LogOutButton = () => {
           color="primary"
           className="MuiButton-logOutButton"
         >
-          Log out
+          Filtrar
         </Button>
       </Box>
     </ThemeProvider>

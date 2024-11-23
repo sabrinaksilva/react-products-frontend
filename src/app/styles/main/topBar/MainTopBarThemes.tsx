@@ -40,6 +40,7 @@ export const mainTopBarToolBarTheme = createTheme({
         ".MuiBox-buttons": {
           display: "flex",
           gap: "16px",
+          marginLeft: "32px !important",
         },
       },
     },

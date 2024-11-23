@@ -1,38 +1,62 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, TextField, ThemeProvider } from "@mui/material";
 import { TopBarButton } from "./TopBarButton";
-import { LogOutButton } from "./LogOutButton";
-import {
-  mainToolBarTheme,
-  mainTopBarToolBarTheme,
-} from "../../styles/main/topBar/MainTopBarThemes";
 import { mainTheme } from "../../styles/main/MainTheme";
+import { FilterButton } from "./FilterButton";
 
 export const MainTopBar: React.FC = () => {
+  const [productName, setProductName] = React.useState("");
+  const [productDescription, setProductDescription] = React.useState("");
+
   return (
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
-      <AppBar
-        className="MuiAppBar-main"
-        position="static"
-        color="primary"
-        elevation={0}
-      >
-        <ThemeProvider theme={mainToolBarTheme}>
-          <Toolbar className="MuiToolBar-main" disableGutters>
-            <ThemeProvider theme={mainTopBarToolBarTheme}>
-              <Box className="MuiBox-main">
-                <Box className="MuiBox-buttons">
-                  <TopBarButton label="PRODUTOS" route="/products" />
-                  <TopBarButton label="ESTOQUE" route="/stock" />
-                </Box>
-              </Box>
-            </ThemeProvider>
-            <LogOutButton />
-          </Toolbar>
-        </ThemeProvider>
+      <AppBar position="static" color="primary" elevation={5}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingX: "16px",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <TopBarButton label="PRODUTOS" route="/products" />
+            <TopBarButton label="ESTOQUE" route="/stock" />
+          </Box>
+
+          <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <TextField
+              label="Nome"
+              value={productName}
+              onChange={(e) => setProductName(e.target.value)}
+              variant="outlined"
+              size="small"
+              sx={{
+                backgroundColor: "#fff",
+                borderRadius: "4px",
+                minWidth: "300ps",
+              }}
+            />
+
+            <TextField
+              label="Descrição"
+              value={productDescription}
+              onChange={(e) => setProductDescription(e.target.value)}
+              variant="outlined"
+              size="small"
+              sx={{
+                backgroundColor: "#fff",
+                borderRadius: "4px",
+                minWidth: "450px",
+              }}
+            />
+
+            <FilterButton />
+          </Box>
+        </Toolbar>
       </AppBar>
     </ThemeProvider>
   );

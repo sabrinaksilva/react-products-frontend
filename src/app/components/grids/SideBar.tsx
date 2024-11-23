@@ -8,7 +8,7 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import { SvgIconProps } from "@mui/material/SvgIcon";
 import Divider from "@mui/material/Divider";
 import { SideBarLogo } from "./SideBarLogo";
-import { ListItemButton } from "@mui/material";
+import { ListItemButton, Paper } from "@mui/material";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -129,6 +129,7 @@ export const SideBar = () => {
   return (
     <ThemeProvider theme={sideBarTheme}>
       <CssBaseline />
+
       <Box className="MuiBox-sidebar">
         <SideBarLogo />
         <Divider />

@@ -30,7 +30,7 @@ export const ProductsTableHeader = () => {
   return (
     <TableHead>
       <TableRow>
-        <ProductTableHeader label={"ID"} />
+        <ProductTableHeader label={"Código"} />
         <ProductTableHeader label={"Nome"} />
         <ProductTableHeader label={"Descrição"} />
         <ProductTableHeader label={"Preço unitário"} />

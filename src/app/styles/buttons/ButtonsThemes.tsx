@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export const logOutButtonTheme = createTheme({
+export const filterButtonTheme = createTheme({
   palette: {
     primary: {
       main: "#36486b",

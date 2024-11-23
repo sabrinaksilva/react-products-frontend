@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import { TextField, Button, Box, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
-
+import { TextInput } from "../input/TextInput";
+import { Button, Box, Paper } from "@mui/material";
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   textAlign: "center",
@@ -18,20 +18,6 @@ export interface Product {
   quantity: number;
 }
 
-export const ProductTextInput = ({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: number | string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) => {
-  return (
-    <TextField label={label} value={value} onChange={onChange} fullWidth />
-  );
-};
-
 export const ProductCreationPage = () => {
   const [product, setProduct] = useState<Product>({
     id: "",
@@ -40,15 +26,6 @@ export const ProductCreationPage = () => {
     price: 0,
     quantity: 0,
   });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setProduct({
-      ...product,
-      [name]:
-        name === "price" || name === "quantity" ? parseFloat(value) : value,
-    });
-  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,12 +65,12 @@ export const ProductCreationPage = () => {
         >
           Novo Produto
         </h1>
-        <ProductTextInput
+        <TextInput
           label="Nome"
           value={product.name}
           onChange={(e) => setProduct({ ...product, name: e.target.value })}
         />
-        <ProductTextInput
+        <TextInput
           label="Descrição do Produto"
           value={product.description}
           onChange={(e) =>
@@ -107,14 +84,14 @@ export const ProductCreationPage = () => {
             width: "100%",
           }}
         >
-          <ProductTextInput
+          <TextInput
             label="Preço"
             value={product.price}
             onChange={(e) =>
               setProduct({ ...product, price: parseFloat(e.target.value) })
             }
           />
-          <ProductTextInput
+          <TextInput
             label="Quantidade atual"
             value={product.quantity}
             onChange={(e) =>
