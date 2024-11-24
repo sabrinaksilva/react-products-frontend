@@ -43,6 +43,9 @@ cash-flow/overview: allows inventory and cash control
 delete products
 ![image](https://github.com/user-attachments/assets/f25cabc0-1d61-4cc0-b035-3e85c98df4fc)
 
+wip: manage the inflow and outflow (transactions) of products, their quantities and value by date
+![image](https://github.com/user-attachments/assets/1b539cd0-8bd9-44a6-bdc6-c3fb3d241fb4)
+
 view, edit, create products
 ![image](https://github.com/user-attachments/assets/949589a1-33aa-4b55-ac4b-5ac8c7be5002)
 
