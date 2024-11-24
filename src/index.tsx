@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { App } from "./app/App";
+import { FilterProvider } from "./context/products/ProductsFilterContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -9,11 +10,11 @@ const root = ReactDOM.createRoot(
 
 const GlobalApp = () => {
   return (
-    // <ThemeProvider theme={AppTheme}>
     <React.StrictMode>
-      <App />
+      <FilterProvider>
+        <App />
+      </FilterProvider>
     </React.StrictMode>
-    // </ThemeProvider>
   );
 };
 
