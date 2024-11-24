@@ -1,20 +1,18 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { Product } from "../../../domain/Product";
-import { ListProductsUseCase } from "../../../usecases/list-products-use-case";
-import { productServiceSingleton } from "../../../shared/singletons/ProductServiceSingleton";
 import { ProductAccordionLine } from "./ProductAccordionLine";
+import { ProductService } from "../../../adapters/api/products/ProductService";
 
 export const ProductsList = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const listProductsUseCase = new ListProductsUseCase(productServiceSingleton);
 
   useEffect(() => {
     (async () => {
       setLoading(true);
       try {
-        const fetchedProducts = await listProductsUseCase.getAll();
+        const fetchedProducts = await ProductService.getAll();
         setProducts(fetchedProducts);
       } catch (error) {
         console.error("Erro ao buscar produtos:", error);

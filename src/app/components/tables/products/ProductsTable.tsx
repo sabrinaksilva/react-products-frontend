@@ -32,7 +32,7 @@ export const ProductsTableHeader = () => {
       <TableRow>
         <ProductTableHeader label={"Nome"} />
         <ProductTableHeader label={"Descrição"} />
-        <ProductTableHeader label={"Custo Unitário"} />
+        {/*<ProductTableHeader label={"Custo Unitário"} />*/}
         <ProductTableHeader label={"Preço final unitário"} />
         <ProductTableHeader label={"Quantidade"} />
       </TableRow>
@@ -66,19 +66,19 @@ export const ProductTable = ({ product }: { product: Product }) => {
             >
               {product.description}
             </TableCell>
+            {/*<TableCell*/}
+            {/*  sx={{*/}
+            {/*    borderRight: "1px solid rgba(224, 224, 224, 1)",*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  {product.costPrice}*/}
+            {/*</TableCell>*/}
             <TableCell
               sx={{
                 borderRight: "1px solid rgba(224, 224, 224, 1)",
               }}
             >
-              {product.costPrice.toFixed(2)}
-            </TableCell>
-            <TableCell
-              sx={{
-                borderRight: "1px solid rgba(224, 224, 224, 1)",
-              }}
-            >
-              {product.price.toFixed(2)}
+              {product.price}
             </TableCell>
             <TableCell>{product.quantity}</TableCell>
           </TableRow>

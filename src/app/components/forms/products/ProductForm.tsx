@@ -93,24 +93,24 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           type="number"
           sx={{ flex: 1 }}
         />
-        <TextField
-          label="Preço de custo"
-          helperText="Custo total relacionado à aquisição ou fabricação do produto, matérias primas, mão de obra, impostos e demais despesas"
-          value={product.costPrice}
-          onChange={(e) =>
-            setProduct({
-              ...product,
-              costPrice: parseFloat(e.target.value || "0"),
-            })
-          }
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">R$</InputAdornment>
-            ),
-          }}
-          type="number"
-          sx={{ flex: 1 }}
-        />
+        {/*<TextField*/}
+        {/*  label="Preço de custo"*/}
+        {/*  helperText="Custo total relacionado à aquisição ou fabricação do produto, matérias primas, mão de obra, impostos e demais despesas"*/}
+        {/*  value={product.costPrice}*/}
+        {/*  onChange={(e) =>*/}
+        {/*    setProduct({*/}
+        {/*      ...product,*/}
+        {/*      costPrice: parseFloat(e.target.value || "0"),*/}
+        {/*    })*/}
+        {/*  }*/}
+        {/*  InputProps={{*/}
+        {/*    startAdornment: (*/}
+        {/*      <InputAdornment position="start">R$</InputAdornment>*/}
+        {/*    ),*/}
+        {/*  }}*/}
+        {/*  type="number"*/}
+        {/*  sx={{ flex: 1 }}*/}
+        {/*/>*/}
       </Box>
     </Box>
   );
