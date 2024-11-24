@@ -9,6 +9,7 @@ import { CreateProductPage } from "../products/CreateProductPage";
 import { CashFlowTransactionsPage } from "../cashFlow/CashFlowTransactionsPage";
 import { EditProductPage } from "../products/EditProductPage";
 import { CreateTransactionPage } from "../cashFlow/CreateTransactionPage";
+import { StockPage } from "../cashFlow/StockPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -23,7 +24,7 @@ export const MainPageWithRoutes: React.FC = () => {
           {location.pathname === "/products" && <ProductListingSection />}
           {location.pathname === "/products/new" && <CreateProductPage />}
           {location.pathname === "/products/edit" && <EditProductPage />}
-          {location.pathname === "/cash-flow/overview" && <Foo />}
+          {location.pathname === "/cash-flow/overview" && <StockPage />}
           {location.pathname === "/cash-flow/transactions" && (
             <CashFlowTransactionsPage />
           )}

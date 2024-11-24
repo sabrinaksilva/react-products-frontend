@@ -165,7 +165,7 @@ export const MenuItems = () => {
             label="Fluxo de Caixa"
             icon={<PointOfSaleIcon />}
             subItems={[
-              { label: "Resumo Financeiro", location: "/cash-flow/overview" },
+              { label: "Estoque", location: "/cash-flow/overview" },
               { label: "Movimentações", location: "/cash-flow/transactions" },
             ]}
             to="/cash-flow/overview"

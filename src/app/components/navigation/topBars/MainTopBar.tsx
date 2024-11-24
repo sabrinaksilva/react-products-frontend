@@ -14,8 +14,11 @@ export const MainTopBar: React.FC = () => {
     productDescription,
     setProductDescription,
   } = useFilterContext();
+
   const location = useLocation();
   const isProductsPage = location.pathname === "/products";
+  const isCashFlowTransactionsPage =
+    location.pathname === "/cash-flow/transactions";
 
   return (
     <ThemeProvider theme={mainTheme}>
@@ -65,6 +68,22 @@ export const MainTopBar: React.FC = () => {
               />
 
               <FilterButton />
+            </Box>
+          )}
+          {isCashFlowTransactionsPage && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                color: "white",
+                fontSize: "30px",
+                fontWeight: "bold",
+              }}
+            >
+              Essa tela é um mockup, mas estimo que com + 2 noites eu
+              finalizaria
             </Box>
           )}
         </Toolbar>

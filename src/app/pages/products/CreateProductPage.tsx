@@ -36,7 +36,7 @@ export const CreateProductPage = () => {
 
   return (
     <MainContainer
-      width="150vh"
+      width="100vh"
       height="70vh"
       title="NOVO PRODUTO"
       paddingX={8}

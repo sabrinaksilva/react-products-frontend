@@ -48,9 +48,10 @@ const NewTransactionButton = () => {
         sx={{
           width: "100%",
           display: "flex",
-          justifyContent: "flex-start",
-          paddingTop: 2,
+          justifyContent: "space-between",
+          alignItems: "center",
           paddingLeft: 2,
+          paddingRight: 2,
         }}
       >
         <Button
@@ -60,6 +61,17 @@ const NewTransactionButton = () => {
         >
           NOVA TRANSAÇÃO
         </Button>
+        <Box
+          sx={{
+            fontSize: "18px",
+            color: "grey",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          A idealização dessa tela, se houver tempo, seria histórico de
+          transações de entrada/saída de produtos
+        </Box>
       </Box>
     </ThemeProvider>
   );
