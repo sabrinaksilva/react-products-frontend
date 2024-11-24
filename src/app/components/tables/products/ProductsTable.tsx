@@ -30,12 +30,11 @@ export const ProductsTableHeader = () => {
   return (
     <TableHead>
       <TableRow>
-        <ProductTableHeader label={"Código"} />
         <ProductTableHeader label={"Nome"} />
         <ProductTableHeader label={"Descrição"} />
-        <ProductTableHeader label={"Valor unitário de custo"} />
-        <ProductTableHeader label={"Valor unitário de venda"} />
-        <ProductTableHeader label={"Quantidade em estoque"} />
+        <ProductTableHeader label={"Custo Unitário"} />
+        <ProductTableHeader label={"Preço final unitário"} />
+        <ProductTableHeader label={"Quantidade"} />
       </TableRow>
     </TableHead>
   );
@@ -53,11 +52,34 @@ export const ProductTable = ({ product }: { product: Product }) => {
               backgroundColor: theme.palette.custom.secondaryBackground,
             }}
           >
-            <TableCell>{product.id}</TableCell>
-            <TableCell>{product.name}</TableCell>
-            <TableCell>{product.description}</TableCell>
-            <TableCell>{product.costPrice.toFixed(2)}</TableCell>
-            <TableCell>{product.price.toFixed(2)}</TableCell>
+            <TableCell
+              sx={{
+                borderRight: "1px solid rgba(224, 224, 224, 1)",
+              }}
+            >
+              {product.name}
+            </TableCell>
+            <TableCell
+              sx={{
+                borderRight: "1px solid rgba(224, 224, 224, 1)",
+              }}
+            >
+              {product.description}
+            </TableCell>
+            <TableCell
+              sx={{
+                borderRight: "1px solid rgba(224, 224, 224, 1)",
+              }}
+            >
+              {product.costPrice.toFixed(2)}
+            </TableCell>
+            <TableCell
+              sx={{
+                borderRight: "1px solid rgba(224, 224, 224, 1)",
+              }}
+            >
+              {product.price.toFixed(2)}
+            </TableCell>
             <TableCell>{product.quantity}</TableCell>
           </TableRow>
         </TableBody>

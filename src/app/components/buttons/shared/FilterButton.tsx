@@ -9,8 +9,8 @@ export const FilterButton = () => {
         variant="contained"
         color="primary"
         sx={{
-          fontSize: "12px",
-          padding: "5px 10px",
+          fontSize: "14px",
+          padding: "10px 20px",
           backgroundColor: "#884d0f",
           "&:hover": {
             backgroundColor: "#3e2305",

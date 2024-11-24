@@ -16,7 +16,7 @@ export const ProductAccordionLine = ({
   product: Product;
   index: number;
 }) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(true);
   const navigate = useNavigate();
 
   const handleEditClick = () => {
@@ -31,7 +31,7 @@ export const ProductAccordionLine = ({
   };
 
   return (
-    <Accordion onChange={handleAccordionChange}>
+    <Accordion expanded={isExpanded} onChange={handleAccordionChange}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls={`panel${index}-content`}
@@ -45,14 +45,39 @@ export const ProductAccordionLine = ({
             width: "100%",
           }}
         >
-          <Box>{product.name}</Box>
-          {isExpanded && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <Box sx={{ fontWeight: "bold", fontSize: "16px" }}>
+              {product.name}
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <Box
+              sx={{
+                fontSize: "12px",
+                color: "gray",
+              }}
+            >
+              ID {product.id}
+            </Box>
             <Button
               variant="contained"
               color="primary"
               sx={{
                 fontSize: "12px",
-                padding: "5px 10px",
+                padding: "5px 12px",
+                marginRight: "5px",
                 backgroundColor: "#884d0f",
                 "&:hover": {
                   backgroundColor: "#3e2305",
@@ -62,7 +87,7 @@ export const ProductAccordionLine = ({
             >
               EDITAR
             </Button>
-          )}
+          </Box>
         </Box>
       </AccordionSummary>
       <AccordionDetails>

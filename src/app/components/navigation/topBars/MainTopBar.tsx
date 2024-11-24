@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { Box, CssBaseline, TextField, ThemeProvider } from "@mui/material";
-import { NavigationButton } from "../../buttons/shared/NavigationButton";
 import { mainTheme } from "../../../styles/main/MainTheme";
 import { FilterButton } from "../../buttons/shared/FilterButton";
 
@@ -25,13 +24,15 @@ export const MainTopBar: React.FC = () => {
             paddingX: "16px",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <NavigationButton label="PRODUTOS" route="/products" />
-            <NavigationButton label="ESTOQUE" route="/stock" />
-          </Box>
-
           {isProductsPage && (
-            <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "16px",
+                marginLeft: "auto",
+              }}
+            >
               <TextField
                 label="Nome"
                 value={productName}
@@ -41,7 +42,7 @@ export const MainTopBar: React.FC = () => {
                 sx={{
                   backgroundColor: "#fff",
                   borderRadius: "4px",
-                  minWidth: "300px",
+                  minWidth: "450px",
                 }}
               />
 
@@ -54,7 +55,7 @@ export const MainTopBar: React.FC = () => {
                 sx={{
                   backgroundColor: "#fff",
                   borderRadius: "4px",
-                  minWidth: "450px",
+                  minWidth: "650px",
                 }}
               />
 
