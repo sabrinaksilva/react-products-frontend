@@ -22,7 +22,7 @@ export const mainTheme = createTheme({
     primary: { main: "#0D1928" },
     secondary: { main: "#F28E35" },
     custom: {
-      white: "#FFFFFF",
+      white: "#a19b92",
       primaryBackground: "#ffd580",
       secondaryBackground: "#f0f0f0",
     },

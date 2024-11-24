@@ -7,6 +7,7 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Box,
 } from "@mui/material";
 import { mainTheme } from "../../../styles/main/MainTheme";
 import { StockSummaryResponse } from "../../../adapters/api/dtos/stock/StockDTOS";
@@ -46,8 +47,19 @@ export const StockTable = ({
   stockSummaries: StockSummaryResponse[];
 }) => {
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer
+      component={Paper}
+      sx={{
+        borderWidth: "2px",
+        borderStyle: "solid",
+        borderColor: "rgba(0,0,0,0.39)",
+      }}
+    >
+      <Table
+        style={{
+          backgroundColor: "#808080",
+        }}
+      >
         <StocksTableHeader />
         <TableBody>
           {stockSummaries.map((summary) => (
