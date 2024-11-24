@@ -13,6 +13,8 @@ export const AppRoutes: React.FC = () => {
         <Route path="/cash-flow/overview" element={<GridContainer />} />
         <Route path="/cash-flow/transactions" element={<GridContainer />} />
         <Route path="/cash-flow/transactions/new" element={<GridContainer />} />
+        <Route path="/login" element={<GridContainer />} />
+
         <Route path="/foo" element={<GridContainer />} />
       </Routes>
     </Router>

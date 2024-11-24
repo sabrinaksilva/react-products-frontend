@@ -1,12 +1,13 @@
 import React from "react";
+import Button from "@mui/material/Button";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import { useNavigate } from "react-router-dom";
 import { ProductTable } from "../../tables/products/ProductsTable";
 import { Product } from "../../../domain/Product";
 import { ProductRemoveModal } from "../../modals/ProductRemoveModal";
-import { ProductListingActions } from "./ProductListingActions";
 
 export const ProductAccordionLine = ({
   product,
@@ -22,11 +23,17 @@ export const ProductAccordionLine = ({
   );
   const [isProcessing, setIsProcessing] = React.useState(false);
 
+  const navigate = useNavigate();
+
   const handleAccordionChange = (
     event: React.SyntheticEvent,
     expanded: boolean,
   ) => {
     setIsExpanded(expanded);
+  };
+
+  const handleEditClick = () => {
+    navigate("/products/edit", { state: { product } });
   };
 
   const handleRemoveClick = () => {
@@ -43,7 +50,64 @@ export const ProductAccordionLine = ({
           aria-controls={`panel${index}-content`}
           id={`panel${index}-header`}
         >
-          <ProductHeader product={product} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <div style={{ fontWeight: "bold", fontSize: "16px" }}>
+                {product.name}
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <div style={{ fontSize: "12px", color: "gray" }}>
+                ID {product.id}
+              </div>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{
+                  fontSize: "12px",
+                  padding: "5px 12px",
+                  marginRight: "5px",
+                  backgroundColor: "#884d0f",
+                  "&:hover": {
+                    backgroundColor: "#3e2305",
+                  },
+                }}
+                onClick={handleEditClick}
+              >
+                EDITAR
+              </Button>
+              <Button
+                variant="contained"
+                color="error"
+                style={{
+                  fontSize: "12px",
+                  padding: "5px 12px",
+                }}
+                onClick={handleRemoveClick}
+              >
+                REMOVER
+              </Button>
+            </div>
+          </div>
         </AccordionSummary>
         <AccordionDetails>
           <ProductTable product={product} />
@@ -60,31 +124,5 @@ export const ProductAccordionLine = ({
         productId={product.id}
       />
     </>
-  );
-};
-
-const ProductHeader = ({ product }: { product: Product }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-        }}
-      >
-        <div style={{ fontWeight: "bold", fontSize: "16px" }}>
-          {product.name}
-        </div>
-      </div>
-      <ProductListingActions product={product} />
-    </div>
   );
 };

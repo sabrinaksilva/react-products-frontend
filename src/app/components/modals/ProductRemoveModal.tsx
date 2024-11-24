@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom";
 import { ProductService } from "../../adapters/api/products/ProductService";
 
 const modalStyle = {
@@ -33,6 +34,8 @@ export const ProductRemoveModal = ({
   onClose: () => void;
   productId: string;
 }) => {
+  const navigate = useNavigate();
+
   const handleConfirmRemove = async () => {
     setModalMessage("Efetuando remoção....");
     setIsProcessing(true);
@@ -44,6 +47,15 @@ export const ProductRemoveModal = ({
       setModalMessage("Ops! Não foi possível remover o produto!");
     } finally {
       setIsProcessing(false);
+    }
+  };
+
+  const handleBackClick = () => {
+    if (!isProcessing) {
+      onClose();
+      setTimeout(() => {
+        navigate("/products");
+      }, 300);
     }
   };
 
@@ -82,7 +94,11 @@ export const ProductRemoveModal = ({
               SIM
             </Button>
           )}
-          <Button variant="outlined" onClick={onClose} disabled={isProcessing}>
+          <Button
+            variant="outlined"
+            onClick={handleBackClick}
+            disabled={isProcessing}
+          >
             VOLTAR
           </Button>
         </Box>

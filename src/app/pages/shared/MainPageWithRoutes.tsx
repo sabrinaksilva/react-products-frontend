@@ -10,6 +10,7 @@ import { CashFlowTransactionsPage } from "../cashFlow/CashFlowTransactionsPage";
 import { EditProductPage } from "../products/EditProductPage";
 import { CreateTransactionPage } from "../cashFlow/CreateTransactionPage";
 import { StockPage } from "../cashFlow/StockPage";
+import { LoginPage } from "../auth/LogInPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ export const MainPageWithRoutes: React.FC = () => {
             <CreateTransactionPage />
           )}
           {location.pathname === "/foo" && <Foo />}
+          {location.pathname === "/login" && <LoginPage />}
         </Box>
       </Box>
     </ThemeProvider>

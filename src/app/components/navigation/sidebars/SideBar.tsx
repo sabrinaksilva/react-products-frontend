@@ -16,6 +16,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Link } from "react-router-dom";
 import { createTheme } from "@mui/material/styles";
+import { useLocation } from "react-router-dom";
 
 interface SubItem {
   label: string;
@@ -196,13 +197,16 @@ export const MenuItems = () => {
 };
 
 export const SideBar = () => {
+  const location = useLocation();
+  const hideSideBarMenu = location.pathname === "/login";
+
   return (
     <ThemeProvider theme={sideBarTheme}>
       <CssBaseline />
       <Box className="MuiBox-sidebar">
         <SideBarLogo />
         <Divider />
-        <MenuItems />
+        {hideSideBarMenu ? <></> : <MenuItems />}
       </Box>
     </ThemeProvider>
   );
