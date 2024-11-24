@@ -1,8 +1,19 @@
 import React from "react";
-import { Box, Button, CssBaseline, ThemeProvider } from "@mui/material";
-import { filterButtonTheme } from "../../../styles/buttons/ButtonsThemes";
+import { Box, Button } from "@mui/material";
+import { useFilterContext } from "../../../../context/products/ProductsFilterContext";
 
-export const FilterButton = () => {
+export const FilterButton: React.FC = () => {
+  const { productName, productDescription, setShouldFilter } =
+    useFilterContext();
+
+  const handleFilter = () => {
+    setShouldFilter(true);
+    console.log("FilterButton handleFilter:", {
+      productName,
+      productDescription,
+    });
+  };
+
   return (
     <Box className="MuiBox-logOutButton">
       <Button
@@ -16,6 +27,7 @@ export const FilterButton = () => {
             backgroundColor: "#3e2305",
           },
         }}
+        onClick={handleFilter}
       >
         Filtrar
       </Button>

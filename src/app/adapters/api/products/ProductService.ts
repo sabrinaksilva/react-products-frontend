@@ -5,12 +5,12 @@ import { API_URL } from "../../../shared/config";
 const BASE_URL = `${API_URL}/products`;
 
 export class ProductService {
-  static async getAll(): Promise<Product[]> {
-    console.log("getAll");
+  static async getAll(name?: string, description?: string): Promise<Product[]> {
+    const params: Record<string, string> = {};
+    if (name) params.name = name;
+    if (description) params.description = description;
 
-    const response = await axios.get<Product[]>(BASE_URL);
-    console.log(response.data);
-
+    const response = await axios.get<Product[]>(BASE_URL, { params });
     return response.data;
   }
 
