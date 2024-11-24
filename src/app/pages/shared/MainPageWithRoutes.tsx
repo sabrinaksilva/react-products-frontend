@@ -24,10 +24,10 @@ export const MainPageWithRoutes: React.FC = () => {
           {location.pathname === "/products/new" && <CreateProductPage />}
           {location.pathname === "/products/edit" && <EditProductPage />}
           {location.pathname === "/cash-flow/overview" && <StockPage />}
-          {location.pathname === "/cash-flow/inventory" && (
+          {location.pathname === "/cash-flow/transactions" && (
             <InventoryTransactionsPage />
           )}
-          {location.pathname === "/cash-flow/inventory/new" && (
+          {location.pathname === "/cash-flow/transactions/new" && (
             <CreateTransactionPage />
           )}
         </Box>

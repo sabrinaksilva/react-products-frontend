@@ -18,7 +18,7 @@ export const MainTopBar: React.FC = () => {
   const location = useLocation();
   const isProductsPage = location.pathname === "/products";
   const isCashFlowTransactionsPage =
-    location.pathname === "/cash-flow/inventory";
+    location.pathname === "/cash-flow/transactions";
 
   return (
     <ThemeProvider theme={mainTheme}>
