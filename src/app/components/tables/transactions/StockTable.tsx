@@ -10,7 +10,7 @@ import {
   Box,
 } from "@mui/material";
 import { mainTheme } from "../../../styles/main/MainTheme";
-import { StockSummaryResponse } from "../../../adapters/api/dtos/stock/StockDTOS";
+import { StockSummaryResponse } from "../../../adapters/api/dtos/inventory/StockDTOS";
 
 const theme = mainTheme;
 

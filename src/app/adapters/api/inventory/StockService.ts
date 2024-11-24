@@ -1,5 +1,5 @@
 import axios from "axios";
-import { StockResponse } from "../dtos/stock/StockDTOS";
+import { StockResponse } from "../dtos/inventory/StockDTOS";
 import { API_URL } from "../../../shared/config";
 
 const BASE_URL = `${API_URL}/stocks`;

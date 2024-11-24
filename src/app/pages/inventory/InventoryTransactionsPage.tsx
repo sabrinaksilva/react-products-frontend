@@ -1,11 +1,11 @@
 import { MainContainer } from "../../components/containers/shared/MainContainer";
-import { CashFlowBox } from "../../components/containers/cashFlow/CashFlowBox";
+import { InventoryBox } from "../../components/containers/inventory/InventoryBox";
 import { Box, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { TransactionsServiceMock } from "../../adapters/api/mock/TransactionsServiceMock";
 import { Transaction } from "../../domain/Transaction";
 
-export const CashFlowTransactionsPage = () => {
+export const InventoryTransactionsPage = () => {
   const [transactions, setTransactions] = useState<Transaction[] | null>(null);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const CashFlowTransactionsPage = () => {
             height: "100%",
           }}
         >
-          <CashFlowBox transactions={transactions} />
+          <InventoryBox transactions={transactions} />
         </Box>
       ) : (
         <Box

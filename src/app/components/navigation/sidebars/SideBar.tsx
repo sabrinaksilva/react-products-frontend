@@ -167,7 +167,7 @@ export const MenuItems = () => {
             icon={<PointOfSaleIcon />}
             subItems={[
               { label: "Estoque", location: "/cash-flow/overview" },
-              { label: "Movimentações", location: "/cash-flow/transactions" },
+              { label: "Movimentações", location: "/cash-flow/inventory" },
             ]}
             to="/cash-flow/overview"
           />

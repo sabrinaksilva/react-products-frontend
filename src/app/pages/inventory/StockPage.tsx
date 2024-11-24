@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import {
   StockResponse,
   StockSummaryResponse,
-} from "../../adapters/api/dtos/stock/StockDTOS";
+} from "../../adapters/api/dtos/inventory/StockDTOS";
 import { StockTable } from "../../components/tables/transactions/StockTable";
-import { StockService } from "../../adapters/api/transactions/StockService";
+import { StockService } from "../../adapters/api/inventory/StockService";
 import { Box } from "@mui/material";
 import { StockIndicatorCard } from "../../components/cards/StockIndicatorCard";
 

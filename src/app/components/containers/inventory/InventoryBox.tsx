@@ -12,7 +12,7 @@ import React from "react";
 import { Transaction } from "../../../domain/Transaction";
 import { TransactionTable } from "../../tables/transactions/TransactionsTable";
 
-const cashFlowTheme = createTheme({
+const inventoryTheme = createTheme({
   palette: {
     primary: {
       main: "#884d0f",
@@ -41,7 +41,7 @@ const NewTransactionButton = () => {
   const handleClick = () => navigate("/cash-flow/transactions/new");
 
   return (
-    <ThemeProvider theme={cashFlowTheme}>
+    <ThemeProvider theme={inventoryTheme}>
       <CssBaseline />
       <Box
         className="new-transaction-button-container"
@@ -93,7 +93,7 @@ const SubTitleSection = () => {
   );
 };
 
-export const CashFlowBox = ({
+export const InventoryBox = ({
   transactions,
 }: {
   transactions: Transaction[];

@@ -5,10 +5,10 @@ import { MainTopBar } from "../../components/navigation/topBars/MainTopBar";
 import { ProductListingSection } from "../../components/listing/products/ProductListingSection";
 import { mainPageWithRoutesTheme } from "../../styles/main/MainTheme";
 import { CreateProductPage } from "../products/CreateProductPage";
-import { CashFlowTransactionsPage } from "../cashFlow/CashFlowTransactionsPage";
+import { InventoryTransactionsPage } from "../inventory/InventoryTransactionsPage";
 import { EditProductPage } from "../products/EditProductPage";
-import { CreateTransactionPage } from "../cashFlow/CreateTransactionPage";
-import { StockPage } from "../cashFlow/StockPage";
+import { CreateTransactionPage } from "../inventory/CreateTransactionPage";
+import { StockPage } from "../inventory/StockPage";
 
 export const MainPageWithRoutes: React.FC = () => {
   const location = useLocation();
@@ -24,10 +24,10 @@ export const MainPageWithRoutes: React.FC = () => {
           {location.pathname === "/products/new" && <CreateProductPage />}
           {location.pathname === "/products/edit" && <EditProductPage />}
           {location.pathname === "/cash-flow/overview" && <StockPage />}
-          {location.pathname === "/cash-flow/transactions" && (
-            <CashFlowTransactionsPage />
+          {location.pathname === "/cash-flow/inventory" && (
+            <InventoryTransactionsPage />
           )}
-          {location.pathname === "/cash-flow/transactions/new" && (
+          {location.pathname === "/cash-flow/inventory/new" && (
             <CreateTransactionPage />
           )}
         </Box>
