@@ -4,6 +4,7 @@ import { Box, Button } from "@mui/material";
 import { MainContainer } from "../../components/containers/shared/MainContainer";
 import { Product } from "../../domain/Product";
 import { ProductForm } from "../../components/forms/products/ProductForm";
+import { ProductService } from "../../adapters/api/products/ProductService";
 
 export const EditProductPage = () => {
   const { state } = useLocation();
@@ -11,9 +12,19 @@ export const EditProductPage = () => {
 
   const [editedProduct, setEditedProduct] = React.useState(product);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Product updated:", editedProduct);
+    try {
+      const updatedProduct = await ProductService.update(
+        editedProduct.id,
+        editedProduct,
+      );
+      console.log("Product updated:", updatedProduct);
+      alert("Produto atualizado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao atualizar o produto:", error);
+      alert("Falha ao atualizar o produto. Por favor, tente novamente.");
+    }
   };
 
   return (
@@ -28,7 +39,7 @@ export const EditProductPage = () => {
         <ProductForm
           product={editedProduct}
           setProduct={setEditedProduct}
-          isReadOnly
+          isReadOnly={false}
         />
         <Button
           variant="contained"

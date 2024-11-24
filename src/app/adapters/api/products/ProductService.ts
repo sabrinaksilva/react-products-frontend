@@ -14,7 +14,7 @@ export class ProductService {
     return response.data;
   }
 
-  static async getById(id: number): Promise<Product> {
+  static async getById(id: string): Promise<Product> {
     const response = await axios.get<Product>(`${BASE_URL}/${id}`);
     return response.data;
   }
@@ -25,14 +25,14 @@ export class ProductService {
   }
 
   static async update(
-    id: number,
+    id: string,
     product: Omit<Product, "id">,
   ): Promise<Product> {
     const response = await axios.put<Product>(`${BASE_URL}/${id}`, product);
     return response.data;
   }
 
-  static async delete(id: number): Promise<void> {
+  static async delete(id: string): Promise<void> {
     await axios.delete(`${BASE_URL}/${id}`);
   }
 }

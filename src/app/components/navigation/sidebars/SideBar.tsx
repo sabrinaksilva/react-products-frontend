@@ -110,29 +110,37 @@ const MenuItem = ({
   label,
   icon,
   subItems,
+  to,
 }: {
   label: string;
   icon: React.ReactElement<SvgIconProps>;
-  subItems: SubItem[];
+  subItems?: SubItem[];
+  to: string;
 }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
-    setOpen(!open);
+    if (subItems && subItems.length > 0) {
+      setOpen(!open);
+    }
   };
 
   return (
     <>
-      <ListItemButton
-        component={Link}
-        to={subItems.length > 0 ? "#" : "/products"}
-        onClick={subItems.length > 0 ? handleClick : undefined}
-      >
+      <ListItemButton component={Link} to={to} onClick={handleClick}>
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={label} />
-        {subItems.length > 0 ? open ? <ExpandLess /> : <ExpandMore /> : null}
+        {subItems && subItems.length > 0 ? (
+          open ? (
+            <ExpandLess />
+          ) : (
+            <ExpandMore />
+          )
+        ) : null}
       </ListItemButton>
-      {subItems.length > 0 && <SubItemsList subitems={subItems} open={open} />}
+      {subItems && subItems.length > 0 && (
+        <SubItemsList subitems={subItems} open={open} />
+      )}
     </>
   );
 };
@@ -150,6 +158,7 @@ export const MenuItems = () => {
               { label: "Novo", location: "/products/new" },
               { label: "Listagem", location: "/products" },
             ]}
+            to="/products"
           />
           <Divider />
           <MenuItem
@@ -159,6 +168,7 @@ export const MenuItems = () => {
               { label: "Resumo Financeiro", location: "/cash-flow/overview" },
               { label: "Movimentações", location: "/cash-flow/transactions" },
             ]}
+            to="/cash-flow/overview"
           />
           <Divider />
         </List>
